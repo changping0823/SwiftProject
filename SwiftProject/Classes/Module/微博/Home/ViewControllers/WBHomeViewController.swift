@@ -50,7 +50,7 @@ class WBHomeViewController: WBBaseViewController {
         
         weak var weakSelf = self
         let menuView = FWMenuView.menu(itemTitles: titles, itemImageNames: images as? [UIImage], itemBlock: { (popupView, index, title) in
-//            print("Menu：点击了第\(index)个按钮")
+            print("Menu：点击了第\(index)个按钮")
             weakSelf?.present(WBReleaseViewController(), animated: true, completion: nil)
         }, property: vProperty)
         
