@@ -1,0 +1,143 @@
+PODS:
+  - Alamofire (5.4.3)
+  - AttributedString (2.2.0)
+  - BSText (1.1.2):
+    - YYImage
+  - CropViewController (2.6.0)
+  - DKCamera (1.6.7)
+  - DKImagePickerController (4.3.2):
+    - DKImagePickerController/Camera (= 4.3.2)
+    - DKImagePickerController/Core (= 4.3.2)
+    - DKImagePickerController/ImageDataManager (= 4.3.2)
+    - DKImagePickerController/InlineCamera (= 4.3.2)
+    - DKImagePickerController/PhotoEditor (= 4.3.2)
+    - DKImagePickerController/PhotoGallery (= 4.3.2)
+    - DKImagePickerController/Resource (= 4.3.2)
+  - DKImagePickerController/Camera (4.3.2):
+    - DKCamera
+    - DKImagePickerController/Core
+  - DKImagePickerController/Core (4.3.2):
+    - DKImagePickerController/ImageDataManager
+    - DKImagePickerController/Resource
+  - DKImagePickerController/ImageDataManager (4.3.2)
+  - DKImagePickerController/InlineCamera (4.3.2):
+    - DKCamera
+    - DKImagePickerController/Core
+  - DKImagePickerController/PhotoEditor (4.3.2):
+    - CropViewController (~> 2.5)
+    - DKImagePickerController/Core
+  - DKImagePickerController/PhotoGallery (4.3.2):
+    - DKImagePickerController/Core
+    - DKPhotoGallery
+  - DKImagePickerController/Resource (4.3.2)
+  - DKPhotoGallery (0.0.17):
+    - DKPhotoGallery/Core (= 0.0.17)
+    - DKPhotoGallery/Model (= 0.0.17)
+    - DKPhotoGallery/Preview (= 0.0.17)
+    - DKPhotoGallery/Resource (= 0.0.17)
+    - SDWebImage
+    - SwiftyGif
+  - DKPhotoGallery/Core (0.0.17):
+    - DKPhotoGallery/Model
+    - DKPhotoGallery/Preview
+    - SDWebImage
+    - SwiftyGif
+  - DKPhotoGallery/Model (0.0.17):
+    - SDWebImage
+    - SwiftyGif
+  - DKPhotoGallery/Preview (0.0.17):
+    - DKPhotoGallery/Model
+    - DKPhotoGallery/Resource
+    - SDWebImage
+    - SwiftyGif
+  - DKPhotoGallery/Resource (0.0.17):
+    - SDWebImage
+    - SwiftyGif
+  - DropDown (2.3.13)
+  - ESPullToRefresh (2.9.3)
+  - FSPagerView (0.8.3)
+  - JXPhotoBrowser (3.1.3)
+  - JXSegmentedView (1.2.7)
+  - Kingfisher (6.3.0)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - ObjectMapper (4.2.0)
+  - SDWebImage (5.12.1):
+    - SDWebImage/Core (= 5.12.1)
+  - SDWebImage/Core (5.12.1)
+  - SnapKit (5.0.1)
+  - SwiftyGif (5.4.0)
+  - SwiftyJSON (5.0.1)
+  - Toast-Swift (5.0.1)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+
+DEPENDENCIES:
+  - AttributedString
+  - BSText
+  - DKImagePickerController
+  - DropDown
+  - ESPullToRefresh
+  - FSPagerView
+  - JXPhotoBrowser
+  - JXSegmentedView
+  - Kingfisher
+  - Moya
+  - ObjectMapper
+  - SnapKit
+  - SwiftyJSON
+  - Toast-Swift
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AttributedString
+    - BSText
+    - CropViewController
+    - DKCamera
+    - DKImagePickerController
+    - DKPhotoGallery
+    - DropDown
+    - ESPullToRefresh
+    - FSPagerView
+    - JXPhotoBrowser
+    - JXSegmentedView
+    - Kingfisher
+    - Moya
+    - ObjectMapper
+    - SDWebImage
+    - SnapKit
+    - SwiftyGif
+    - SwiftyJSON
+    - Toast-Swift
+    - YYImage
+
+SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  AttributedString: 386c1af029cc3186288d9feb84fbbb097928843f
+  BSText: 70f0da93875c5f1dd6ab9e27fc22b1e50a41b66c
+  CropViewController: 7093b39ec3cb508531b22d35773e06cecd7378d8
+  DKCamera: a902b66921fca14b7a75266feb8c7568aa7caa71
+  DKImagePickerController: b5eb7f7a388e4643264105d648d01f727110fc3d
+  DKPhotoGallery: fdfad5125a9fdda9cc57df834d49df790dbb4179
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  ESPullToRefresh: 0d68daa602b343c81753a1b95e09fd0bfcddfd40
+  FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
+  JXPhotoBrowser: d32e94e1226d43bf5ed83164e3f5b651fed625e0
+  JXSegmentedView: eb1cad21f57c2543c00c3e08b8fd3c7ca54f5acd
+  Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+  SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftyGif: 5d4af95df24caf1c570dbbcb32a3b8a0763bc6d7
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+
+PODFILE CHECKSUM: 49bcdd7521df83a9d1186a739c41e50601030e08
+
+COCOAPODS: 1.10.1
