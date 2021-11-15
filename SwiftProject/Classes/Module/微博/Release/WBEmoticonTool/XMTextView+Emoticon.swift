@@ -17,6 +17,7 @@ extension XMTextView {
         }
         if em.remove {
             deleteBackward()
+            self.delegate?.textViewDidChange?(self)
             return
         }
         
@@ -30,6 +31,7 @@ extension XMTextView {
         let range = selectedRange
         attributedText = attributeM
         selectedRange = NSRange(location: range.location+1, length: 0)
+        self.delegate?.textViewDidChange?(self)
     }
     
     /// 发送文本

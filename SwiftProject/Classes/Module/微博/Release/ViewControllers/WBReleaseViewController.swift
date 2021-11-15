@@ -66,6 +66,7 @@ class WBReleaseViewController: WBBaseViewController {
         
         navBar.wr_setRightButton(title: "发送", titleColor: UIColor.white)
         navBar.rightButton.setBackgroundImage(UIImage.init(named: "newfollowimg_3"), for: .normal)
+        navBar.rightButton.isEnabled = false
         let rightButtonFrame = CGRect.init(x: SCREEN_WIDTH - 70, y: STATUS_BAR_HEIGHT+10, width: 56, height: 24)
         navBar.rightButton.frame = rightButtonFrame
         navBar.rightButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
@@ -108,7 +109,7 @@ class WBReleaseViewController: WBBaseViewController {
 // MARK: UITextView代理
 extension WBReleaseViewController: UITextViewDelegate{
     func textViewDidChange(_ textView: UITextView) {
-
+        navBar.rightButton.isEnabled = textView.text.length > 0
     }
     
 }
