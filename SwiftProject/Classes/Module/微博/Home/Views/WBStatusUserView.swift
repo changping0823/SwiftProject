@@ -8,8 +8,8 @@
 import UIKit
 
 class WBStatusUserView: UIView {
-    lazy var iconView: UIImageView = {
-        let icon = UIImageView()
+    lazy var iconView: UIButton = {
+        let icon = UIButton()
         icon.layer.masksToBounds = true
         icon.layer.cornerRadius = 20;
         icon.layer.borderColor = UIColor.lightGray.cgColor
@@ -98,8 +98,7 @@ class WBStatusUserView: UIView {
     var status: WBStatuses? {
         set{
             _status = newValue
-            iconView.setImage(with: _status?.user?.avatar_large)
-            
+            iconView.setImage(with: _status?.user?.avatar_large, placeholder: UIImage.init(named: "avator_default"), for: .normal)
             guard let verified = _status?.user?.verified else {
                 verifiedView.isHidden = true
                 return

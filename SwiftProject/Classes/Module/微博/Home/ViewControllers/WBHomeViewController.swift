@@ -114,7 +114,9 @@ class WBHomeViewController: WBBaseViewController {
 
 
 extension WBHomeViewController: UITableViewDelegate{
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.pushViewController(WBStatusDetailViewController(), animated: true)
+    }
 }
 
 extension WBHomeViewController: UITableViewDataSource{

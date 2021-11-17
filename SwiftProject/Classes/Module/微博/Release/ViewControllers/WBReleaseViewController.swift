@@ -6,17 +6,28 @@
 //
 
 import UIKit
+import DKImagePickerController
 
 class WBReleaseViewController: WBBaseViewController {
-
+    
+    var scrollView: UIScrollView = UIScrollView()
+    var contentView = UIView()
+    
+    
     lazy var textView: XMTextView = {
         let view = XMTextView()
+        view.backgroundColor = UIColor.darkGray
         view.placeholder = "分享新鲜事..."
         view.placeholderFont = UIFont.systemFont(ofSize: 16)
         view.font = UIFont.systemFont(ofSize: 16)
         view.delegate = self
         return view
     }()
+    lazy var pictureView: WBReleasePictureView = {
+        let view = WBReleasePictureView()
+        return view
+    }()
+    
     lazy var emoticonView: WBReleaseEmoticonView = {
         let view = WBReleaseEmoticonView()
         view.frame = CGRect.init(x: 0, y: 0, width: SCREEN_WIDTH, height: 300)
@@ -33,14 +44,42 @@ class WBReleaseViewController: WBBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()
-        view.addSubview(textView)
+        
+        scrollView.backgroundColor = UIColor.red
+        view.addSubview(scrollView)
+        
+        contentView.backgroundColor = UIColor.yellow
+        scrollView.addSubview(contentView)
+        
+        contentView.addSubview(textView)
+        contentView.addSubview(pictureView)
+        
+        
         view.addSubview(toolView)
         
-        textView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(10)
-            make.trailing.equalToSuperview().offset(-10)
+
+        scrollView.snp.makeConstraints { make in
             make.top.equalTo(navBar.snp.bottom)
+            make.left.right.equalToSuperview()
+            make.width.equalToSuperview()
             make.bottom.equalTo(toolView.snp.top)
+        }
+        contentView.snp.makeConstraints { make in
+            make.left.top.right.bottom.equalToSuperview()
+            make.width.equalToSuperview()
+        }
+        textView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.left.equalToSuperview().offset(10)
+            make.right.equalToSuperview().offset(-10)
+            make.height.equalTo(150)
+        }
+        pictureView.snp.makeConstraints { make in
+            make.top.equalTo(textView.snp.bottom)
+            make.left.equalToSuperview().offset(10)
+            make.right.equalToSuperview().offset(-10)
+            make.height.equalTo(100)
+            make.bottom.equalToSuperview()
         }
         
         toolView.snp.makeConstraints { make in
@@ -71,7 +110,7 @@ class WBReleaseViewController: WBBaseViewController {
         navBar.rightButton.frame = rightButtonFrame
         navBar.rightButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         navBar.onClickRightButton = {
-            self.view.endEditing(false)
+            weakSelf?.view.endEditing(false)
         }
     }
 
@@ -118,6 +157,27 @@ extension WBReleaseViewController: UITextViewDelegate{
 // MARK: 发布工具代理
 extension WBReleaseViewController: WBReleaseToolViewDelegate{
     func pictureButtonClick(sender: UIButton) {
+        let pickerController = DKImagePickerController()
+        DKImagePickerControllerResource.customLocalizationBlock = { title in
+            if title == "picker.select.title" {
+                return "下一步(%@)"
+            } else {
+                return nil
+            }
+        }
+        
+        weak var weakSelf = self
+        pickerController.didSelectAssets = { (assets: [DKAsset]) in
+            
+            weakSelf?.pictureView.snp.updateConstraints { make in
+                
+            }
+            weakSelf?.pictureView.assets = assets
+        }
+
+        self.present(pickerController, animated: true) {
+            
+        }
     }
     
     func emoticonButtonClick(sender: UIButton) {

@@ -35,11 +35,14 @@ class WBStatusGridView: UIView {
            super.layoutSubviews()
            
            contentView.frame = bounds
-           
+           var number = 3
+           if imageSrcs.count == 4 {
+               number = 2
+           }
            for index in 0..<contentView.subviews.count {
                let view = contentView.subviews[index]
-               let rows = index/3
-               let columns = index%3
+               let rows = index/number
+               let columns = index%number
                view.frame = CGRect.init(x: Double(columns) * (imageWH + middleSpace), y: Double(rows) * (imageWH + middleSpace), width: imageWH, height: imageWH)
            }
        }

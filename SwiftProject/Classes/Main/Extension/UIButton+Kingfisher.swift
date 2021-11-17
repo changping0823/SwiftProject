@@ -15,8 +15,7 @@ extension UIButton {
         with source: String?,
         placeholder: UIImage? = nil,
         for state: UIControl.State,
-        completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)? = nil) -> DownloadTask?
-    {
+        completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)? = nil) -> DownloadTask?{
         if source == nil {
             return nil
         }

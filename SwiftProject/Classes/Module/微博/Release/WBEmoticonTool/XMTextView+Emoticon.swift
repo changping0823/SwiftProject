@@ -57,4 +57,9 @@ extension XMTextView {
     var clientText: NSAttributedString {
         return attributedText
     }
+    
+    
+
 }
+
+

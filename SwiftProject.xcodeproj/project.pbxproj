@@ -72,6 +72,9 @@
 		769B933F273E16B300163F48 /* WBReleaseEmoticonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769B933E273E16B300163F48 /* WBReleaseEmoticonView.swift */; };
 		769B9341273E51F700163F48 /* WBReleaseEmoticonAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769B9340273E51F700163F48 /* WBReleaseEmoticonAttachment.swift */; };
 		769B9345273E545600163F48 /* XMTextView+Emoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769B9344273E545600163F48 /* XMTextView+Emoticon.swift */; };
+		76AEB476274346D5001575D7 /* WBStatusDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AEB475274346D5001575D7 /* WBStatusDetailViewController.swift */; };
+		76AEB47A27439877001575D7 /* WBReleasePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AEB47927439877001575D7 /* WBReleasePictureView.swift */; };
+		76AEB47D27439E81001575D7 /* WBReleaseAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AEB47C27439E81001575D7 /* WBReleaseAsset.swift */; };
 		76B2876726D6153F005C190B /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B2876626D6153F005C190B /* TestViewController.swift */; };
 		76B2876926D6255A005C190B /* DetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B2876826D6255A005C190B /* DetailContentView.swift */; };
 		76B2876D26D62B09005C190B /* WeChatRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B2876C26D62B09005C190B /* WeChatRootView.swift */; };
@@ -208,6 +211,11 @@
 		769B933E273E16B300163F48 /* WBReleaseEmoticonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBReleaseEmoticonView.swift; sourceTree = "<group>"; };
 		769B9340273E51F700163F48 /* WBReleaseEmoticonAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBReleaseEmoticonAttachment.swift; sourceTree = "<group>"; };
 		769B9344273E545600163F48 /* XMTextView+Emoticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XMTextView+Emoticon.swift"; sourceTree = "<group>"; };
+		76AEB475274346D5001575D7 /* WBStatusDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBStatusDetailViewController.swift; sourceTree = "<group>"; };
+		76AEB47727438D85001575D7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		76AEB47827438D85001575D7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		76AEB47927439877001575D7 /* WBReleasePictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBReleasePictureView.swift; sourceTree = "<group>"; };
+		76AEB47C27439E81001575D7 /* WBReleaseAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBReleaseAsset.swift; sourceTree = "<group>"; };
 		76B2876626D6153F005C190B /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		76B2876826D6255A005C190B /* DetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentView.swift; sourceTree = "<group>"; };
 		76B2876C26D62B09005C190B /* WeChatRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeChatRootView.swift; sourceTree = "<group>"; };
@@ -373,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				76526BE32732AF1400AC57E5 /* WBHomeViewController.swift */,
+				76AEB475274346D5001575D7 /* WBStatusDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -702,6 +711,7 @@
 			isa = PBXGroup;
 			children = (
 				769B933C273E040500163F48 /* WBReleaseToolView.swift */,
+				76AEB47927439877001575D7 /* WBReleasePictureView.swift */,
 				769B933E273E16B300163F48 /* WBReleaseEmoticonView.swift */,
 			);
 			path = Views;
@@ -714,6 +724,14 @@
 				769B9344273E545600163F48 /* XMTextView+Emoticon.swift */,
 			);
 			path = WBEmoticonTool;
+			sourceTree = "<group>";
+		};
+		76AEB47B27439E4C001575D7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				76AEB47C27439E81001575D7 /* WBReleaseAsset.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		76B2876A26D628D6005C190B /* 微信 */ = {
@@ -925,6 +943,7 @@
 				76FA5C7F273D0569004A7B34 /* ViewControllers */,
 				769B933B273E03E000163F48 /* Views */,
 				769B9343273E541000163F48 /* WBEmoticonTool */,
+				76AEB47B27439E4C001575D7 /* Models */,
 			);
 			path = Release;
 			sourceTree = "<group>";
@@ -988,6 +1007,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 7693F45A26CE28DC00297EE5;
 			productRefGroup = 7693F46426CE28DC00297EE5 /* Products */;
@@ -1069,6 +1089,7 @@
 				76CAD89A2733B383003C4215 /* WBUser.swift in Sources */,
 				76B2877726D62E17005C190B /* WeChatContact.swift in Sources */,
 				76D00B99273A48820095E892 /* String+Regular.swift in Sources */,
+				76AEB476274346D5001575D7 /* WBStatusDetailViewController.swift in Sources */,
 				76B2876726D6153F005C190B /* TestViewController.swift in Sources */,
 				76CAD89C2733B653003C4215 /* WBStatuses.swift in Sources */,
 				76FA5C6F273CB0E2004A7B34 /* FWPopupRootViewController.swift in Sources */,
@@ -1109,6 +1130,7 @@
 				76B2878526D6492A005C190B /* Separator.swift in Sources */,
 				76526BE22732AE9B00AC57E5 /* WBBaseViewController.swift in Sources */,
 				76874F3126EB428200A3D1CE /* Avatar.swift in Sources */,
+				76AEB47D27439E81001575D7 /* WBReleaseAsset.swift in Sources */,
 				7693F49426CE2A3400297EE5 /* SwiftProject.xcdatamodeld in Sources */,
 				760DE48326F3526500112765 /* PublicViewController.swift in Sources */,
 				76675B8026CF5F8E00EB6FDB /* Global.swift in Sources */,
@@ -1125,6 +1147,7 @@
 				76FB456326FD85C60076653E /* LabelTextView.swift in Sources */,
 				7693F48F26CE2A3400297EE5 /* ViewController.swift in Sources */,
 				76526BF52732B08B00AC57E5 /* WBMessageViewController.swift in Sources */,
+				76AEB47A27439877001575D7 /* WBReleasePictureView.swift in Sources */,
 				764CF770273B8E3B00BD0C60 /* WBStatusGridView.swift in Sources */,
 				76E1DB642701A50C007A6FB6 /* WebViewController.swift in Sources */,
 				7693F4A726CE2EE200297EE5 /* HomeViewController.swift in Sources */,
@@ -1194,6 +1217,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7693F48826CE2A3400297EE5 /* Base */,
+				76AEB47727438D85001575D7 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1202,6 +1226,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7693F48A26CE2A3400297EE5 /* Base */,
+				76AEB47827438D85001575D7 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1213,6 +1238,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1274,6 +1300,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

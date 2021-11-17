@@ -97,6 +97,9 @@ class WBReleaseToolView: UIView {
     }
     
     @objc func toolButtonClick(sender: UIButton){
+        if sender.tag == 0 {
+            self.delegate?.pictureButtonClick(sender: sender)
+        }
         if sender.tag == 4 {
             sender.isSelected = !sender.isSelected
             self.delegate?.emoticonButtonClick(sender: sender)

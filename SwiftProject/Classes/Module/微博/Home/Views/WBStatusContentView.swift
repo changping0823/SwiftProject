@@ -22,6 +22,7 @@ class WBStatusContentView: UIView {
         statusLabel.delegate = self
         statusLabel.isEditable = false        //必须禁止输入，否则点击将弹出输入键盘
         statusLabel.isScrollEnabled = false
+        statusLabel.isUserInteractionEnabled = false
 //        statusLabel.isSelectable = false
         //内容缩进为0（去除左右边距）
         statusLabel.textContainer.lineFragmentPadding = 0
