@@ -16,7 +16,6 @@ class WBReleaseViewController: WBBaseViewController {
     
     lazy var textView: XMTextView = {
         let view = XMTextView()
-        view.backgroundColor = UIColor.darkGray
         view.placeholder = "分享新鲜事..."
         view.placeholderFont = UIFont.systemFont(ofSize: 16)
         view.font = UIFont.systemFont(ofSize: 16)
@@ -25,6 +24,7 @@ class WBReleaseViewController: WBBaseViewController {
     }()
     lazy var pictureView: WBReleasePictureView = {
         let view = WBReleasePictureView()
+        view.delegate = self
         return view
     }()
     
@@ -45,10 +45,8 @@ class WBReleaseViewController: WBBaseViewController {
         super.viewDidLoad()
         setupNavBar()
         
-        scrollView.backgroundColor = UIColor.red
         view.addSubview(scrollView)
         
-        contentView.backgroundColor = UIColor.yellow
         scrollView.addSubview(contentView)
         
         contentView.addSubview(textView)
@@ -157,27 +155,7 @@ extension WBReleaseViewController: UITextViewDelegate{
 // MARK: 发布工具代理
 extension WBReleaseViewController: WBReleaseToolViewDelegate{
     func pictureButtonClick(sender: UIButton) {
-        let pickerController = DKImagePickerController()
-        DKImagePickerControllerResource.customLocalizationBlock = { title in
-            if title == "picker.select.title" {
-                return "下一步(%@)"
-            } else {
-                return nil
-            }
-        }
-        
-        weak var weakSelf = self
-        pickerController.didSelectAssets = { (assets: [DKAsset]) in
-            
-            weakSelf?.pictureView.snp.updateConstraints { make in
-                
-            }
-            weakSelf?.pictureView.assets = assets
-        }
-
-        self.present(pickerController, animated: true) {
-            
-        }
+        self.addPicture(assets: self.pictureView.assets)
     }
     
     func emoticonButtonClick(sender: UIButton) {
@@ -191,6 +169,28 @@ extension WBReleaseViewController: WBReleaseToolViewDelegate{
             self.textView.becomeFirstResponder()
         }
     }
+    
+    func addPicture(assets: [DKAsset]) {
+        let pickerController = DKImagePickerController()
+        pickerController.maxSelectableCount = 9
+        pickerController.setSelectedAssets(assets: assets)
+        DKImagePickerControllerResource.customLocalizationBlock = { title in
+            if title == "picker.select.title" {
+                return "下一步(%@)"
+            } else {
+                return nil
+            }
+        }
+        
+        weak var weakSelf = self
+        pickerController.didSelectAssets = { (assets: [DKAsset]) in
+            weakSelf?.pictureView.assets = assets
+        }
+
+        self.present(pickerController, animated: true) {
+            
+        }
+    }
 }
 
 // MARK: 表情工具代理
@@ -202,5 +202,15 @@ extension WBReleaseViewController: WBReleaseEmoticonViewDelegate{
             return
         }
         textView.inserEmoticonView(em: emoticon)
+    }
+}
+
+
+extension WBReleaseViewController: WBReleasePictureViewDelegate{
+    func addPicture(pictureView: WBReleasePictureView, assets: [DKAsset]) {
+        self.addPicture(assets: assets)
+    }
+    func deletePicture(pictureView: WBReleasePictureView, assets: [DKAsset]) {
+        
     }
 }
